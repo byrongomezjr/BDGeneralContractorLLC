@@ -1,0 +1,24 @@
+{
+  "name": "B&D General Contractor LLC",
+  "short_name": "B&D Contractor",
+  "description": "New Jersey's Trusted General Contractor - Building, Remodeling, Plumbing, Electrical, Carpentry, Painting, and Roofing Services",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1A1F2E",
+  "theme_color": "#F2A900",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

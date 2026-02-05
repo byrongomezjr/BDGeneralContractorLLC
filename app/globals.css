@@ -1,0 +1,413 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Font Faces */
+@font-face {
+  font-family: 'Clash Display';
+  src: url('/fonts/ClashDisplay-Variable.woff2') format('woff2');
+  font-weight: 200 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+/* Root Variables - Dark Theme (Default) */
+:root,
+html.dark {
+  --font-clash: 'Clash Display', system-ui, sans-serif;
+  --font-outfit: 'Outfit', system-ui, sans-serif;
+  
+  /* Theme Colors */
+  --bg-primary: #1A1F2E;
+  --bg-secondary: #151925;
+  --bg-tertiary: #10131C;
+  --bg-card: #1f2537;
+  --bg-card-hover: #252d42;
+  
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --text-muted: rgba(255, 255, 255, 0.5);
+  
+  --border-color: rgba(255, 255, 255, 0.1);
+  --border-hover: rgba(242, 169, 0, 0.3);
+  
+  --scrollbar-track: #1A1F2E;
+}
+
+/* Light Theme */
+html.light {
+  --bg-primary: #ffffff;
+  --bg-secondary: #F7FAFC;
+  --bg-tertiary: #EDF2F7;
+  --bg-card: #ffffff;
+  --bg-card-hover: #F7FAFC;
+  
+  --text-primary: #1A1F2E;
+  --text-secondary: #4A5568;
+  --text-muted: #718096;
+  
+  --border-color: #E2E8F0;
+  --border-hover: rgba(242, 169, 0, 0.5);
+  
+  --scrollbar-track: #F7FAFC;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #F2A900;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C98D00;
+}
+
+/* Smooth theme transitions */
+html {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html.light body {
+  background-color: var(--bg-secondary);
+}
+
+/* Selection Color */
+::selection {
+  background-color: #F2A900;
+  color: #1A1F2E;
+}
+
+/* Base Layer */
+@layer base {
+  body {
+    @apply bg-background-white text-secondary antialiased;
+    font-family: var(--font-outfit), system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-clash), system-ui, sans-serif;
+    @apply font-bold tracking-tight;
+  }
+}
+
+/* Component Layer */
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-secondary bg-primary rounded-full
+           transition-all duration-300 ease-out
+           hover:bg-primary-400 hover:shadow-lg hover:shadow-primary/30 hover:-translate-y-0.5
+           active:translate-y-0 active:shadow-md
+           focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-secondary;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-secondary border-2 border-primary/20 rounded-full
+           transition-all duration-300 ease-out
+           hover:border-primary hover:bg-secondary-400 hover:shadow-lg hover:-translate-y-0.5
+           active:translate-y-0 active:shadow-md
+           focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+  }
+
+  .btn-cta {
+    @apply inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white bg-cta rounded-full
+           transition-all duration-300 ease-out
+           hover:bg-cta-hover hover:shadow-lg hover:shadow-cta/40 hover:-translate-y-0.5 hover:scale-105
+           active:translate-y-0 active:scale-100
+           focus:outline-none focus:ring-2 focus:ring-cta focus:ring-offset-2;
+  }
+
+  .section-padding {
+    @apply py-20 md:py-28 lg:py-32;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .heading-xl {
+    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight;
+  }
+
+  .heading-lg {
+    @apply text-3xl sm:text-4xl md:text-5xl font-bold leading-tight;
+  }
+
+  .heading-md {
+    @apply text-2xl sm:text-3xl md:text-4xl font-bold leading-tight;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary-300 to-primary;
+  }
+
+  .card-hover {
+    @apply transition-all duration-500 ease-out
+           hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-2;
+  }
+
+  .glass {
+    @apply bg-white/10 backdrop-blur-lg border border-white/20;
+  }
+
+  .glass-dark {
+    @apply bg-secondary/80 backdrop-blur-lg border border-white/10;
+  }
+}
+
+/* Utility Layer */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animate-delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .animate-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animate-delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .animate-delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .animate-delay-500 {
+    animation-delay: 500ms;
+  }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+}
+
+/* Hero Background Pattern */
+.hero-pattern {
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(242, 169, 0, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(242, 169, 0, 0.05) 0%, transparent 50%),
+    linear-gradient(135deg, #1A1F2E 0%, #0f1219 100%);
+}
+
+/* Animated Background Gradient */
+.animated-gradient {
+  background: linear-gradient(-45deg, #1A1F2E, #2D3748, #1A1F2E, #0f1219);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Grid Background Pattern */
+.grid-pattern {
+  background-image: 
+    linear-gradient(rgba(242, 169, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(242, 169, 0, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* Noise Texture Overlay */
+.noise-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  pointer-events: none;
+}
+
+/* Service Card Glow Effect */
+.service-card-glow {
+  position: relative;
+}
+
+.service-card-glow::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(135deg, #F2A900, transparent, #F2A900);
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: -1;
+}
+
+.service-card-glow:hover::before {
+  opacity: 1;
+}
+
+/* Image Overlay Gradient */
+.image-overlay {
+  position: relative;
+}
+
+.image-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(26, 31, 46, 0.9) 0%, rgba(26, 31, 46, 0.4) 50%, transparent 100%);
+}
+
+/* ==================== */
+/* LIGHT THEME OVERRIDES */
+/* ==================== */
+
+/* Hero Pattern - Light */
+html.light .hero-pattern {
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(242, 169, 0, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(242, 169, 0, 0.1) 0%, transparent 50%),
+    linear-gradient(135deg, #F7FAFC 0%, #EDF2F7 100%);
+}
+
+/* Grid Pattern - Light */
+html.light .grid-pattern {
+  background-image: 
+    linear-gradient(rgba(26, 31, 46, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26, 31, 46, 0.05) 1px, transparent 1px);
+}
+
+/* Theme-aware section backgrounds */
+html.light .bg-secondary {
+  background-color: #ffffff !important;
+}
+
+html.light .bg-secondary-500 {
+  background-color: #ffffff !important;
+}
+
+html.light .bg-secondary-600 {
+  background-color: #F7FAFC !important;
+}
+
+html.light .bg-secondary-700 {
+  background-color: #EDF2F7 !important;
+}
+
+/* Theme-aware text colors */
+html.light .text-white {
+  color: #1A1F2E !important;
+}
+
+html.light .text-white\/70,
+html.light .text-white\/60 {
+  color: #4A5568 !important;
+}
+
+html.light .text-white\/50,
+html.light .text-white\/40 {
+  color: #718096 !important;
+}
+
+/* Theme-aware borders */
+html.light .border-white\/10,
+html.light .border-white\/5 {
+  border-color: #E2E8F0 !important;
+}
+
+/* Theme-aware backgrounds */
+html.light .bg-white\/5,
+html.light .bg-white\/10 {
+  background-color: rgba(26, 31, 46, 0.05) !important;
+}
+
+html.light .hover\:bg-white\/10:hover,
+html.light .hover\:bg-white\/20:hover {
+  background-color: rgba(26, 31, 46, 0.1) !important;
+}
+
+/* Header styles for light mode */
+html.light header.bg-secondary\/95 {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+html.light header .text-white\/80 {
+  color: #4A5568 !important;
+}
+
+/* Dropdown in light mode */
+html.light .bg-secondary-600 {
+  background-color: #ffffff !important;
+  border-color: #E2E8F0 !important;
+}
+
+html.light .text-white\/70:hover {
+  color: #F2A900 !important;
+}
+
+/* Footer in light mode */
+html.light footer.bg-secondary-700 {
+  background-color: #1A1F2E !important;
+}
+
+html.light footer .text-white {
+  color: #ffffff !important;
+}
+
+html.light footer .text-white\/60,
+html.light footer .text-white\/50 {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* Form inputs in light mode */
+html.light input.bg-white\/5,
+html.light select.bg-white\/5,
+html.light textarea.bg-white\/5 {
+  background-color: #F7FAFC !important;
+  color: #1A1F2E !important;
+  border-color: #E2E8F0 !important;
+}
+
+html.light input::placeholder,
+html.light textarea::placeholder {
+  color: #A0AEC0 !important;
+}
+
+html.light select option {
+  background-color: #ffffff !important;
+  color: #1A1F2E !important;
+}
+
+/* Cards and containers in light mode */
+html.light .shadow-2xl {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Primary/accent elements stay consistent */
+html.light .bg-primary,
+html.light .bg-primary\/10,
+html.light .bg-primary\/20,
+html.light .text-primary,
+html.light .border-primary {
+  /* These stay the same golden color */
+}
+
+/* Smooth transitions for all themed elements */
+* {
+  transition-property: background-color, border-color, color;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+}

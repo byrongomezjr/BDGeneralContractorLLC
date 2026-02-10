@@ -6,10 +6,8 @@ import { useRef } from 'react';
 import {
   Building2,
   Wrench,
-  Hammer,
   Zap,
   Paintbrush,
-  Home,
   ArrowRight,
 } from 'lucide-react';
 
@@ -31,14 +29,6 @@ const services = [
     color: 'from-blue-500 to-blue-400',
   },
   {
-    icon: Hammer,
-    title: 'Carpentry',
-    description:
-      'Expert woodworking and carpentry services. Custom cabinetry, framing, trim work, and more with meticulous attention to detail.',
-    features: ['Custom Cabinets', 'Trim & Molding', 'Deck Building', 'Framing'],
-    color: 'from-amber-600 to-amber-500',
-  },
-  {
     icon: Zap,
     title: 'Electrical Services',
     description:
@@ -53,14 +43,6 @@ const services = [
       'Interior and exterior painting services that transform spaces. Quality finishes that last with expert color consultation.',
     features: ['Interior Painting', 'Exterior Painting', 'Staining', 'Wallpaper Removal'],
     color: 'from-purple-500 to-purple-400',
-  },
-  {
-    icon: Home,
-    title: 'Roofing',
-    description:
-      'Protect your home with professional roofing services. Installation, repair, and maintenance for all roof types.',
-    features: ['Roof Installation', 'Repairs', 'Inspections', 'Gutter Services'],
-    color: 'from-slate-600 to-slate-500',
   },
 ];
 

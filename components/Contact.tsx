@@ -24,9 +24,7 @@ const services = [
   'Building & Remodeling',
   'Plumbing Services',
   'Electrical Services',
-  'Carpentry',
   'Painting',
-  'Roofing',
   'Other',
 ];
 

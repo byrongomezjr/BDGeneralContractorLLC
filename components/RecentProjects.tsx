@@ -6,7 +6,7 @@ import { X, ZoomIn, ArrowLeft, ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 
-const categories = ['All', 'Remodeling', 'Plumbing', 'Carpentry', 'Electrical', 'Painting', 'Roofing'];
+const categories = ['All', 'Remodeling', 'Plumbing', 'Electrical', 'Painting'];
 
 // Project data - update image paths as you add real images to /public/projects/
 const projects = [
@@ -16,8 +16,8 @@ const projects = [
     category: 'Remodeling',
     description: 'Complete kitchen transformation with custom cabinetry and modern appliances.',
     location: 'Franklin, NJ',
-    image: '/projects/project-1.jpg', // Add your image here
-    hasImage: true, // Set to true when you add the actual image
+    image: '/projects/project-1.jpg',
+    hasImage: true,
     color: 'from-amber-500 to-orange-500',
   },
   {
@@ -32,16 +32,56 @@ const projects = [
   },
   {
     id: 3,
-    title: 'Custom Built-in Shelving',
-    category: 'Carpentry',
-    description: 'Handcrafted built-in bookshelves and entertainment center.',
-    location: 'Princeton, NJ',
-    image: '/projects/project-3.jpg',
-    hasImage: false,
+    title: 'Bathroom Renovation',
+    category: 'Remodeling',
+    description: 'Complete bathroom renovation with new fixtures and tile work.',
+    location: 'Nutley, NJ',
+    image: '/projects/bathroom.jpg',
+    hasImage: true,
     color: 'from-amber-600 to-yellow-600',
   },
   {
     id: 4,
+    title: 'Bathroom Extension and Remodeling Project',
+    category: 'Remodeling',
+    description: 'Modern bathroom upgrade with premium finishes and elegant design.',
+    location: 'Franklin Lakes, NJ',
+    image: '/projects/bathroom-2.jpg',
+    hasImage: true,
+    color: 'from-teal-500 to-cyan-500',
+  },
+  {
+    id: 5,
+    title: 'Bathroom Extension',
+    category: 'Remodeling',
+    description: 'Spacious master bathroom transformation with contemporary styling.',
+    location: 'Franklin Lakes, NJ',
+    image: '/projects/bathroom-3.jpg',
+    hasImage: true,
+    color: 'from-blue-500 to-indigo-500',
+  },
+  {
+    id: 6,
+    title: 'Guest Bathroom Extension',
+    category: 'Remodeling',
+    description: 'Complete guest bathroom refresh with modern fixtures and tile work.',
+    location: 'Franklin Lakes, NJ',
+    image: '/projects/bathroom-4.jpg',
+    hasImage: true,
+    color: 'from-emerald-500 to-green-500',
+  },
+  {
+    id: 7,
+    title: 'Interior Home Painting',
+    category: 'Painting',
+    description: 'Full interior repaint with premium interior paint finishes.',
+    location: 'Nutley, NJ',
+    image: '/projects/painting-1.jpg',
+    hasImage: true,
+    color: 'from-purple-500 to-pink-500',
+  },
+  {
+    id: 8,
     title: 'Smart Home Wiring',
     category: 'Electrical',
     description: 'Complete electrical panel upgrade and smart home integration.',
@@ -49,46 +89,6 @@ const projects = [
     image: '/projects/project-4.jpg',
     hasImage: false,
     color: 'from-yellow-500 to-amber-500',
-  },
-  {
-    id: 5,
-    title: 'Exterior Home Painting',
-    category: 'Painting',
-    description: 'Full exterior repaint with premium weather-resistant finishes.',
-    location: 'Somerset, NJ',
-    image: '/projects/project-5.jpg',
-    hasImage: false,
-    color: 'from-purple-500 to-pink-500',
-  },
-  {
-    id: 6,
-    title: 'Roof Replacement',
-    category: 'Roofing',
-    description: 'Complete roof replacement with architectural shingles and new gutters.',
-    location: 'Bridgewater, NJ',
-    image: '/projects/project-6.jpg',
-    hasImage: false,
-    color: 'from-slate-500 to-gray-500',
-  },
-  {
-    id: 7,
-    title: 'Living Room Addition',
-    category: 'Remodeling',
-    description: 'Spacious living room extension with vaulted ceilings and skylights.',
-    location: 'Hillsborough, NJ',
-    image: '/projects/project-7.jpg',
-    hasImage: false,
-    color: 'from-green-500 to-emerald-500',
-  },
-  {
-    id: 8,
-    title: 'Master Suite Remodel',
-    category: 'Remodeling',
-    description: 'Luxury master bedroom and ensuite bathroom renovation.',
-    location: 'Piscataway, NJ',
-    image: '/projects/project-8.jpg',
-    hasImage: false,
-    color: 'from-rose-500 to-red-500',
   },
 ];
 

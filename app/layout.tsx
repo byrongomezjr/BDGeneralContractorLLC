@@ -15,16 +15,15 @@ export const metadata: Metadata = {
     default: 'B&D General Contractor LLC | New Jersey\'s Trusted General Contractor',
     template: '%s | B&D General Contractor LLC',
   },
-  description: 'B&D General Contractor LLC provides expert building, remodeling, plumbing, electrical, carpentry, painting, and roofing services across New Jersey. Licensed & Insured with 15+ years of experience.',
+  description: 'B&D General Contractor LLC provides expert building, remodeling, plumbing, electrical, and painting services across New Jersey. Licensed & Insured with 15+ years of experience.',
   keywords: [
     'General Contractor New Jersey',
     'NJ Home Remodeling',
     'Licensed Contractor Franklin NJ',
     'Residential Construction NJ',
     'Plumbing Services NJ',
-    'Carpentry Services NJ',
     'Electrical Contractor NJ',
-    'Roofing NJ',
+    'Painting Services NJ',
     'Home Renovation New Jersey',
   ],
   authors: [{ name: 'B&D General Contractor LLC' }],
@@ -41,7 +40,7 @@ export const metadata: Metadata = {
     url: 'https://bdgeneralcontractor.com',
     siteName: 'B&D General Contractor LLC',
     title: 'B&D General Contractor LLC | New Jersey\'s Trusted General Contractor',
-    description: 'Expert building, remodeling, plumbing, electrical, carpentry, painting, and roofing services across New Jersey. Licensed & Insured with 15+ years of experience.',
+    description: 'Expert building, remodeling, plumbing, electrical, and painting services across New Jersey. Licensed & Insured with 15+ years of experience.',
     images: [
       {
         url: '/og-image.jpg',
@@ -164,21 +163,7 @@ export default function RootLayout({
                     '@type': 'Offer',
                     itemOffered: {
                       '@type': 'Service',
-                      name: 'Carpentry',
-                    },
-                  },
-                  {
-                    '@type': 'Offer',
-                    itemOffered: {
-                      '@type': 'Service',
                       name: 'Painting',
-                    },
-                  },
-                  {
-                    '@type': 'Offer',
-                    itemOffered: {
-                      '@type': 'Service',
-                      name: 'Roofing',
                     },
                   },
                 ],

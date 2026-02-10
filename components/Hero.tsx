@@ -89,8 +89,8 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            From building and remodeling to plumbing, electrical, carpentry, painting, 
-            and roofing — we bring quality craftsmanship and dedication to every project. 
+            From building and remodeling to plumbing, electrical, and painting — 
+            we bring quality craftsmanship and dedication to every project. 
             Your vision, our expertise.
           </motion.p>
 
@@ -124,7 +124,7 @@ export default function Hero() {
             <div className="relative w-52 h-52 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-primary/30">
               <Image
                 src="/images/hero-project.jpg"
-                alt="B&D General Contractor - Professional roofing work in New Jersey"
+                alt="B&D General Contractor - Quality craftsmanship in New Jersey"
                 fill
                 className="object-cover"
                 priority

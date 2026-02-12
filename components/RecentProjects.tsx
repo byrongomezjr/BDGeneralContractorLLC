@@ -193,7 +193,7 @@ export default function RecentProjects() {
                         <span className="text-primary text-sm font-medium mb-1">
                           {project.category}
                         </span>
-                        <h3 className="text-white font-bold text-lg mb-1">{project.title}</h3>
+                        <h3 className="!text-white font-bold text-lg mb-1">{project.title}</h3>
                         <p className="text-white/60 text-sm">{project.location}</p>
                       </div>
                     </div>
@@ -271,7 +271,7 @@ export default function RecentProjects() {
                   <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full mb-4">
                     {selectedProject.category}
                   </span>
-                  <h3 className="text-2xl font-bold text-white mb-2">{selectedProject.title}</h3>
+                  <h3 className="text-2xl font-bold !text-white mb-2">{selectedProject.title}</h3>
                   <p className="text-white/60 text-sm mb-4">{selectedProject.location}</p>
                   <p className="text-white/70 mb-6">{selectedProject.description}</p>
                   

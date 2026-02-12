@@ -82,13 +82,13 @@ const projects = [
   },
   {
     id: 8,
-    title: 'Smart Home Wiring',
-    category: 'Electrical',
-    description: 'Complete electrical panel upgrade and smart home integration.',
-    location: 'New Brunswick, NJ',
-    image: '/projects/project-4.jpg',
-    hasImage: false,
-    color: 'from-yellow-500 to-amber-500',
+    title: 'Exterior Home Painting',
+    category: 'Painting',
+    description: 'Professional exterior painting with premium weather-resistant finishes.',
+    location: 'Nutley, NJ',
+    image: '/projects/painting.jpg',
+    hasImage: true,
+    color: 'from-purple-500 to-pink-500',
   },
 ];
 

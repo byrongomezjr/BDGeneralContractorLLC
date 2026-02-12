@@ -1,6 +1,5 @@
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
-import Services from '@/components/Services';
 import WhyChooseUs from '@/components/WhyChooseUs';
 import Process from '@/components/Process';
 import RecentProjects from '@/components/RecentProjects';
@@ -14,12 +13,11 @@ export default function Home() {
     <main>
       <Header />
       <Hero />
-      <Services />
       <WhyChooseUs />
       <Process />
       <RecentProjects />
-      <Testimonials />
       <About />
+      <Testimonials />
       <Contact />
       <Footer />
     </main>

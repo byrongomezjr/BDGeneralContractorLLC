@@ -2,25 +2,15 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Phone, ChevronDown, Sun, Moon } from 'lucide-react';
+import { Menu, X, Phone, Sun, Moon } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import { useTheme } from '@/context/ThemeContext';
 
 const navigation = [
-  {
-    name: 'Services',
-    href: '#services',
-    hasDropdown: true,
-    dropdownItems: [
-      { name: 'Building & Remodeling', href: '#services' },
-      { name: 'Plumbing Services', href: '#services' },
-      { name: 'Electrical Services', href: '#services' },
-      { name: 'Painting', href: '#services' },
-    ],
-  },
+  { name: 'Services', href: '#services' },
+  { name: 'Projects', href: '#projects' },
   { name: 'About', href: '#about' },
-  { name: 'Gallery', href: '#gallery' },
   { name: 'Testimonials', href: '#testimonials' },
   { name: 'Contact', href: '#contact' },
 ];
@@ -28,7 +18,6 @@ const navigation = [
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
@@ -82,51 +71,14 @@ export default function Header() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            {navigation.map((item, index) => (
-              <div
+            {navigation.map((item) => (
+              <a
                 key={item.name}
-                className="relative"
-                onMouseEnter={() => item.hasDropdown && setActiveDropdown(item.name)}
-                onMouseLeave={() => setActiveDropdown(null)}
+                href={item.href}
+                className="px-4 py-2 text-white/80 hover:text-primary transition-colors duration-300 font-medium"
               >
-                <a
-                  href={item.href}
-                  className="flex items-center gap-1 px-4 py-2 text-white/80 hover:text-primary transition-colors duration-300 font-medium"
-                >
-                  {item.name}
-                  {item.hasDropdown && (
-                    <ChevronDown
-                      className={cn(
-                        'w-4 h-4 transition-transform duration-300',
-                        activeDropdown === item.name && 'rotate-180'
-                      )}
-                    />
-                  )}
-                </a>
-
-                {/* Dropdown Menu */}
-                <AnimatePresence>
-                  {item.hasDropdown && activeDropdown === item.name && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 10 }}
-                      transition={{ duration: 0.2 }}
-                      className="absolute top-full left-0 mt-2 w-56 bg-secondary-600 border border-white/10 rounded-xl overflow-hidden shadow-xl shadow-black/20"
-                    >
-                      {item.dropdownItems?.map((dropdownItem, i) => (
-                        <a
-                          key={dropdownItem.name}
-                          href={dropdownItem.href}
-                          className="block px-4 py-3 text-white/70 hover:text-primary hover:bg-white/5 transition-all duration-300 border-b border-white/5 last:border-0"
-                        >
-                          {dropdownItem.name}
-                        </a>
-                      ))}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
+                {item.name}
+              </a>
             ))}
           </motion.div>
 
@@ -206,20 +158,6 @@ export default function Header() {
                   >
                     {item.name}
                   </a>
-                  {item.hasDropdown && (
-                    <div className="pl-4 mt-2 space-y-2 border-l-2 border-primary/30">
-                      {item.dropdownItems?.map((dropdownItem) => (
-                        <a
-                          key={dropdownItem.name}
-                          href={dropdownItem.href}
-                          className="block py-1 text-white/60 hover:text-primary transition-colors duration-300"
-                          onClick={() => setIsMobileMenuOpen(false)}
-                        >
-                          {dropdownItem.name}
-                        </a>
-                      ))}
-                    </div>
-                  )}
                 </motion.div>
               ))}
               <motion.div

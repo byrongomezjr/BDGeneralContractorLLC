@@ -107,11 +107,12 @@ html.light body {
 /* Component Layer */
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-secondary bg-primary rounded-full
+    @apply inline-flex items-center justify-center px-8 py-4 text-lg font-semibold bg-primary rounded-full
            transition-all duration-300 ease-out
            hover:bg-primary-400 hover:shadow-lg hover:shadow-primary/30 hover:-translate-y-0.5
            active:translate-y-0 active:shadow-md
            focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-secondary;
+    color: #FFFFFF !important; /* White text on gold button - always */
   }
 
   .btn-secondary {
@@ -123,11 +124,12 @@ html.light body {
   }
 
   .btn-cta {
-    @apply inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white bg-cta rounded-full
+    @apply inline-flex items-center justify-center px-8 py-4 text-lg font-bold bg-cta rounded-full
            transition-all duration-300 ease-out
            hover:bg-cta-hover hover:shadow-lg hover:shadow-cta/40 hover:-translate-y-0.5 hover:scale-105
            active:translate-y-0 active:scale-100
            focus:outline-none focus:ring-2 focus:ring-cta focus:ring-offset-2;
+    color: #FFFFFF !important; /* White text on orange button - always */
   }
 
   .section-padding {

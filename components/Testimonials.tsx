@@ -222,26 +222,6 @@ export default function Testimonials() {
           ))}
         </motion.div>
 
-        {/* Google Reviews Badge */}
-        <motion.div
-          className="text-center mt-12"
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.7 }}
-        >
-          <div className="inline-flex items-center gap-4 bg-secondary-500 rounded-full px-6 py-3 border border-white/10">
-            <div className="flex items-center gap-1">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-5 h-5 text-primary fill-primary" />
-              ))}
-            </div>
-            <div className="h-6 w-px bg-white/20" />
-            <div className="text-left">
-              <p className="font-bold text-white text-sm">5.0 Rating</p>
-              <p className="text-white/50 text-xs">200+ Google Reviews</p>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

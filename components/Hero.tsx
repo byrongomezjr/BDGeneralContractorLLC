@@ -134,7 +134,7 @@ export default function Hero() {
               <div className="absolute inset-0 bg-gradient-to-t from-secondary/30 to-transparent" />
             </div>
 
-            {/* Floating Badge - Bottom Left (95% On-Time) */}
+            {/* Floating Badge - Bottom Left (97% On-Time) */}
             <motion.div
               className="absolute -bottom-4 -left-4 sm:-bottom-6 sm:-left-12 md:-left-16 lg:-left-20 bg-secondary-600 border border-white/10 rounded-xl sm:rounded-2xl p-3 sm:p-4 shadow-xl"
               initial={{ opacity: 0, x: -20, y: 20 }}
@@ -143,7 +143,7 @@ export default function Hero() {
             >
               <div className="flex items-center gap-2 sm:gap-3">
                 <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary rounded-lg sm:rounded-xl flex items-center justify-center">
-                  <span className="text-base sm:text-xl font-bold text-secondary">95%</span>
+                  <span className="text-base sm:text-xl font-bold text-secondary">97%</span>
                 </div>
                 <div>
                   <p className="text-white font-bold text-sm sm:text-base">On-Time</p>
@@ -152,27 +152,6 @@ export default function Hero() {
               </div>
             </motion.div>
 
-            {/* Floating Badge - Bottom Right (200+ Reviews) */}
-            <motion.div
-              className="absolute -bottom-4 -right-4 sm:-bottom-6 sm:-right-12 md:-right-16 lg:-right-20 bg-secondary-600 border border-white/10 rounded-xl sm:rounded-2xl p-3 sm:p-4 shadow-xl"
-              initial={{ opacity: 0, x: 20, y: 20 }}
-              animate={{ opacity: 1, x: 0, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.9 }}
-            >
-              <div className="flex items-center gap-2 sm:gap-3">
-                <div className="flex flex-col items-center">
-                  <div className="flex gap-0.5">
-                    {[1, 2, 3, 4, 5].map((i) => (
-                      <Star key={i} className="w-3 h-3 sm:w-4 sm:h-4 text-primary fill-primary" />
-                    ))}
-                  </div>
-                </div>
-                <div>
-                  <p className="text-white font-bold text-sm sm:text-base">200+</p>
-                  <p className="text-white/50 text-xs sm:text-sm">Reviews</p>
-                </div>
-              </div>
-            </motion.div>
           </motion.div>
 
           {/* CTA Button */}

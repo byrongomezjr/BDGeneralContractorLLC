@@ -193,7 +193,7 @@ export default function Footer() {
                 theme === 'dark' ? "text-white/60" : "text-gray-600"
               )}>
                 <p>Mon - Fri: 9:00 AM - 5:00 PM</p>
-                <p>Saturday: 9:00 AM - 5:00 PM</p>
+                <p>Saturday: 9:00 AM - 4:00 PM</p>
                 <p>Sunday: Closed</p>
               </div>
             </div>
@@ -246,7 +246,7 @@ export default function Footer() {
             <span>•</span>
             <span>Fully Insured</span>
             <span>•</span>
-            <span>EPA Lead-Safe Certified</span>
+            <span>NJ Contractors Association</span>
           </div>
         </div>
       </div>

@@ -34,7 +34,7 @@ const contactInfo = [
     label: 'Phone',
     value: '(973)-934-2059',
     href: 'tel:+19739342059',
-    description: 'Mon-Fri 9am-5pm, Sat 9am-5pm',
+    description: 'Mon-Fri 9am-5pm, Sat 9am-4pm',
   },
   {
     icon: Mail,
@@ -55,7 +55,7 @@ const contactInfo = [
     label: 'Hours',
     value: 'Mon-Fri: 9am-5pm',
     href: '#',
-    description: 'Sat: 9am-5pm, Sun: Closed',
+    description: 'Sat: 9am-4pm, Sun: Closed',
   },
 ];
 
@@ -163,7 +163,7 @@ export default function Contact() {
             <div>
               <h3 className="text-2xl font-bold text-white mb-2">Get In Touch</h3>
               <p className="text-white/60">
-                Have questions? Reach out to us through any of these channels.
+                Have questions? Give us a call or send us an email anytime.
               </p>
             </div>
 

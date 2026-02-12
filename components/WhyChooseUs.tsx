@@ -2,7 +2,34 @@
 
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Shield, Clock, Award, DollarSign, MapPin, CheckCircle } from 'lucide-react';
+import { Shield, Clock, Award, DollarSign, MapPin, CheckCircle, Building2, Wrench, Zap, Paintbrush, ArrowRight } from 'lucide-react';
+
+const services = [
+  {
+    icon: Building2,
+    title: 'Building & Remodeling',
+    description: 'Complete home construction and renovation services. From new builds to total transformations.',
+    color: 'from-primary to-primary-400',
+  },
+  {
+    icon: Wrench,
+    title: 'Plumbing Services',
+    description: 'Professional plumbing installation, repair, and maintenance for your home.',
+    color: 'from-blue-500 to-blue-400',
+  },
+  {
+    icon: Zap,
+    title: 'Electrical Services',
+    description: 'Safe and reliable electrical work. Installations, upgrades, and repairs.',
+    color: 'from-yellow-500 to-yellow-400',
+  },
+  {
+    icon: Paintbrush,
+    title: 'Painting',
+    description: 'Interior and exterior painting services that transform spaces with quality finishes.',
+    color: 'from-purple-500 to-purple-400',
+  },
+];
 
 const reasons = [
   {
@@ -18,7 +45,7 @@ const reasons = [
     title: 'On-Time Delivery',
     description:
       'We respect your time and schedule. Our team is committed to meeting deadlines without compromising quality.',
-    stat: '95%',
+    stat: '97%',
     statLabel: 'On-Time Rate',
   },
   {
@@ -60,7 +87,7 @@ export default function WhyChooseUs() {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section className="section-padding bg-secondary relative overflow-hidden">
+    <section id="services" className="section-padding bg-secondary relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 hero-pattern" />
@@ -98,7 +125,7 @@ export default function WhyChooseUs() {
               {[
                 { value: '15+', label: 'Years Experience' },
                 { value: '500+', label: 'Projects Completed' },
-                { value: '95%', label: 'On-Time Delivery' },
+                { value: '97%', label: 'On-Time Delivery' },
               ].map((stat, index) => (
                 <motion.div
                   key={stat.label}
@@ -150,7 +177,7 @@ export default function WhyChooseUs() {
           </div>
         </div>
 
-        {/* Bottom Features */}
+        {/* Bottom Features - Local NJ Expertise & Customer Satisfaction */}
         <motion.div
           className="mt-16 grid md:grid-cols-2 gap-4"
           initial={{ opacity: 0, y: 30 }}
@@ -171,6 +198,54 @@ export default function WhyChooseUs() {
               </div>
             </div>
           ))}
+        </motion.div>
+
+        {/* Our Services Grid */}
+        <motion.div
+          className="mt-16"
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.7 }}
+        >
+          <div className="text-center mb-10">
+            <span className="inline-block px-4 py-2 bg-primary/10 text-primary font-semibold rounded-full mb-4">
+              Our Services
+            </span>
+            <h3 className="text-2xl md:text-3xl font-bold text-white">
+              What We <span className="text-primary">Offer</span>
+            </h3>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {services.map((service, index) => (
+              <motion.div
+                key={service.title}
+                className="group bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 hover:border-primary/30 transition-all duration-500"
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.4, delay: 0.8 + index * 0.1 }}
+              >
+                <div
+                  className={`w-12 h-12 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-500`}
+                >
+                  <service.icon className="w-6 h-6 text-white" />
+                </div>
+                <h4 className="text-lg font-bold text-white mb-2 group-hover:text-primary transition-colors duration-300">
+                  {service.title}
+                </h4>
+                <p className="text-white/60 text-sm leading-relaxed mb-4">
+                  {service.description}
+                </p>
+                <a
+                  href="#contact"
+                  className="inline-flex items-center gap-2 text-primary text-sm font-semibold group/link"
+                >
+                  Get Quote
+                  <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
+                </a>
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>
